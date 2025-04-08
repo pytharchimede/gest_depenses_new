@@ -44,4 +44,58 @@ class Fiche
         $stmt->execute();
         return (int) $stmt->fetchColumn();
     }
+
+    public function searchFiches($beneficiaire, $statut, $date_debut, $date_fin, $date_decaissement, $chantier, $affectation)
+    {
+        $sql = "SELECT * FROM fiches WHERE 1=1";
+
+        if ($beneficiaire) {
+            $sql .= " AND beneficiaire_fiche LIKE :beneficiaire";
+        }
+        if ($statut) {
+            $sql .= " AND statut_fiche = :statut";
+        }
+        if ($date_debut) {
+            $sql .= " AND date_creat_fiche >= :date_debut";
+        }
+        if ($date_fin) {
+            $sql .= " AND date_creat_fiche <= :date_fin";
+        }
+        if ($date_decaissement) {
+            $sql .= " AND date_decaissement_fiche = :date_decaissement";
+        }
+        if ($chantier) {
+            $sql .= " AND chantier_id = :chantier";
+        }
+        if ($affectation) {
+            $sql .= " AND affectation_id = :affectation";
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        if ($beneficiaire) {
+            $stmt->bindValue(':beneficiaire', "%$beneficiaire%");
+        }
+        if ($statut) {
+            $stmt->bindValue(':statut', $statut);
+        }
+        if ($date_debut) {
+            $stmt->bindValue(':date_debut', $date_debut);
+        }
+        if ($date_fin) {
+            $stmt->bindValue(':date_fin', $date_fin);
+        }
+        if ($date_decaissement) {
+            $stmt->bindValue(':date_decaissement', $date_decaissement);
+        }
+        if ($chantier) {
+            $stmt->bindValue(':chantier', $chantier);
+        }
+        if ($affectation) {
+            $stmt->bindValue(':affectation', $affectation);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -1,6 +1,5 @@
-<form action="page_resultat.php" method="get" class="bg-white p-4 rounded-xl shadow-md mb-6">
+<form id="searchForm" class="bg-white p-4 rounded-xl shadow-md mb-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
         <!-- Nom du bénéficiaire -->
         <div>
             <label class="block text-sm font-medium text-gray-700">Nom du bénéficiaire</label>
@@ -50,7 +49,7 @@
                 <?php
                 // Exemple : liste des chantiers depuis la BDD
                 foreach ($chantiers as $chantier) {
-                    echo "<option value='{$chantier['id']}'>{$chantier['nom']}</option>";
+                    echo "<option value='{$chantier['id_chantier']}'>{$chantier['lib_chantier']}</option>";
                 }
                 ?>
             </select>
@@ -64,7 +63,7 @@
                 <?php
                 // Exemple : liste des affectations depuis la BDD
                 foreach ($affectations as $aff) {
-                    echo "<option value='{$aff['id']}'>{$aff['libelle']}</option>";
+                    echo "<option value='{$aff['id_affectation']}'>{$aff['lib_affectation']}</option>";
                 }
                 ?>
             </select>
@@ -73,7 +72,7 @@
 
     <!-- Boutons -->
     <div class="mt-4 flex items-center gap-2">
-        <button type="submit"
+        <button type="button" onclick="searchFiches()"
             class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-semibold">
             Rechercher
         </button>
