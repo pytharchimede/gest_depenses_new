@@ -26,6 +26,12 @@ $chantierObj = new Chantier($pdo);
 $affectations = $affectationObj->getAllAffectation();
 
 $chantiers = $chantierObj->getAllChantier();
+
+$totalMontant = 0;
+foreach ($fichesADecaisser as $fiche) {
+    $totalMontant += $fiche['montant_fiche'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,10 +50,18 @@ $chantiers = $chantierObj->getAllChantier();
     <?php include 'inc/header_decaisse.php'; ?>
 
     <div class="container mx-auto p-8">
+
         <h1 class="text-3xl font-semibold text-center mb-8">Fiches à Décaisser</h1>
 
-
         <?php include 'form/form_search_fiche_decaisse.php'; ?>
+
+        <div id="totalMontant" class="bg-white p-4 rounded-lg shadow mb-6">
+            <h2 class="text-lg font-semibold text-gray-800">Montant Total des Fiches :
+                <span class="text-green-600">
+                    <?php echo number_format($totalMontant, 0, ',', ' '); ?> CFA
+                </span>
+            </h2>
+        </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 resultsContainer">
             <?php foreach ($fichesADecaisser as $fiche): ?>
@@ -136,8 +150,24 @@ $chantiers = $chantierObj->getAllChantier();
         }
 
         function updateResults(fiches) {
+
+
+
             let resultsContainer = document.querySelector('.resultsContainer');
             resultsContainer.innerHTML = ''; // Effacer les anciens résultats
+
+            let totalMontant = fiches.reduce((sum, fiche) => sum + parseFloat(fiche.montant_fiche), 0);
+
+            // Afficher le total en haut
+            document.getElementById('totalMontant').innerHTML = `
+                <div class="bg-white p-4 rounded-lg shadow mb-6">
+                    <h2 class="text-lg font-semibold text-gray-800">Montant Total des Fiches :
+                        <span class="text-green-600">
+                            ${new Intl.NumberFormat().format(totalMontant)} CFA
+                        </span>
+                    </h2>
+                </div>
+            `;
 
             fiches.forEach(fiche => {
                 resultsContainer.innerHTML += `
