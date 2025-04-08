@@ -1,0 +1,30 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+multi-input {
+  display: block;
+  margin: 0 20px 20px 0;
+}
+
+button {
+  background-color: #eee;
+  border: 1px solid #ddd;  
+  font-size: 16px;
+  height: 30px;
+  margin: 0 10px 20px 0;
+}
+
+.container {
+  margin: 150px auto;
+  max-width: 960px;
+}
+
+label {
+  display: block;
+  margin: 0 20px 20px 0;
+}
+
+p {
+  text-align: center;
+}

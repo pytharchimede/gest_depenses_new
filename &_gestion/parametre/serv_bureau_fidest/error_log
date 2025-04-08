@@ -1,0 +1,16 @@
+[03-Apr-2025 13:31:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on bool in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php on line 42
+[03-Apr-2025 13:33:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on bool in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php on line 42
+[03-Apr-2025 13:34:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on bool in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php on line 42
+[07-Apr-2025 15:56:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rowCount() on bool in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/fidestci/public_html/logi/&_gestion/parametre/serv_bureau_fidest/charge_serv_bureau_fidest.php on line 42

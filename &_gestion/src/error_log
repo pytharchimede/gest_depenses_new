@@ -1,0 +1,283 @@
+[01-Apr-2025 10:00:25 UTC] Message WhatsApp envoyé avec succès, SID: MM6f492a49672abcafc435094285a29169
+[01-Apr-2025 10:00:30 UTC] Message WhatsApp envoyé avec succès, SID: MMe664327f948f02c101a469bdb813824d
+[01-Apr-2025 10:52:00 UTC] Message WhatsApp envoyé avec succès, SID: MMba3a9b34f6bc7df6db8d3a1f2ef4403f
+[01-Apr-2025 15:22:11 UTC] Message WhatsApp envoyé avec succès, SID: MM37f55912e16edeeb674363e7af2e08ab
+[02-Apr-2025 10:45:23 UTC] Message WhatsApp envoyé avec succès, SID: MMd29c3d87b6d31dc3f98732324d108b5b
+[02-Apr-2025 11:21:16 UTC] Message WhatsApp envoyé avec succès, SID: MM93cd36b736bb5be41ebb1dab8b21ca1a
+[02-Apr-2025 11:21:20 UTC] Message WhatsApp envoyé avec succès, SID: MMe13d70a3c0c47171133ba1d7f6c72ded
+[02-Apr-2025 11:21:24 UTC] Message WhatsApp envoyé avec succès, SID: MM99b3c9631f3149c627c21bd01fea78a3
+[02-Apr-2025 11:21:27 UTC] Message WhatsApp envoyé avec succès, SID: MM73f0ffe3a53f4d40a40e8847449c5ab4
+[02-Apr-2025 11:21:31 UTC] Message WhatsApp envoyé avec succès, SID: MMbb60065730a6b45fdafb8af26747ae41
+[02-Apr-2025 11:21:34 UTC] Message WhatsApp envoyé avec succès, SID: MMa8662386d78a2ccc11ca52ec4433bcf2
+[02-Apr-2025 11:21:37 UTC] Message WhatsApp envoyé avec succès, SID: MM6dc3496adf31474c36daa759a79cf6df
+[02-Apr-2025 11:21:41 UTC] Message WhatsApp envoyé avec succès, SID: MMc36c6eef45adc3c00b2ae37cbd4cc4af
+[02-Apr-2025 11:21:45 UTC] Message WhatsApp envoyé avec succès, SID: MM8d4af487db8f41854dc8313a5948b7d5
+[02-Apr-2025 11:21:48 UTC] Message WhatsApp envoyé avec succès, SID: MMf88a46d0a933db08174f9ab86c928a0a
+[02-Apr-2025 11:21:51 UTC] Message WhatsApp envoyé avec succès, SID: MM4529a99a6201dedbc0cda18759d930f2
+[02-Apr-2025 11:21:55 UTC] Message WhatsApp envoyé avec succès, SID: MM76b2c36d3448ef07726b5f53c6895a2b
+[02-Apr-2025 11:21:58 UTC] Message WhatsApp envoyé avec succès, SID: MM28dab7410f1411e998a789d95932bdc3
+[02-Apr-2025 11:22:01 UTC] Message WhatsApp envoyé avec succès, SID: MM8ad9d300f4653106fa6ead1bf34e5506
+[02-Apr-2025 11:22:05 UTC] Message WhatsApp envoyé avec succès, SID: MM94660052fe5a9ed619219a7931dafa33
+[02-Apr-2025 11:22:09 UTC] Message WhatsApp envoyé avec succès, SID: MMc36c25c05b8752a8b90daf6689318967
+[02-Apr-2025 11:23:40 UTC] Message WhatsApp envoyé avec succès, SID: MM6c722317a9f82045620a3d1da529e871
+[02-Apr-2025 11:23:50 UTC] Message WhatsApp envoyé avec succès, SID: MM191620241520f75cae9480e8d92a4272
+[02-Apr-2025 11:24:04 UTC] Message WhatsApp envoyé avec succès, SID: MM9c042dbc215bec5f3c8b0940ebf3ac26
+[02-Apr-2025 11:24:17 UTC] Message WhatsApp envoyé avec succès, SID: MM36a957f8cb15fcd98ca662aedbfaa0f6
+[02-Apr-2025 12:05:58 UTC] Message WhatsApp envoyé avec succès, SID: MM8ad253168d674c38bf98c45eab8ca54a
+[02-Apr-2025 12:06:03 UTC] Message WhatsApp envoyé avec succès, SID: MM24225a1392f53b01542d2334c5c60ab2
+[02-Apr-2025 13:24:41 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:24:53 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[02-Apr-2025 13:25:14 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:25:20 UTC] Message WhatsApp envoyé avec succès, SID: MMa2c95c230ef13576ba73acced0e6345f
+[02-Apr-2025 13:25:28 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:25:37 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[02-Apr-2025 13:25:47 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:25:54 UTC] Message WhatsApp envoyé avec succès, SID: MM2bd01a1fec40475aee40c91ca942a790
+[02-Apr-2025 13:26:06 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:26:13 UTC] Message WhatsApp envoyé avec succès, SID: MM28b90d5d561a0ae5abab2dc5b80015f5
+[02-Apr-2025 13:26:20 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:26:32 UTC] Message WhatsApp envoyé avec succès, SID: MMc7c866872c71be1a0f9912becdb631c1
+[02-Apr-2025 13:28:43 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:28:49 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[02-Apr-2025 13:28:58 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:29:04 UTC] Message WhatsApp envoyé avec succès, SID: MMad07a4d33cb448bdf719b16bb3228535
+[02-Apr-2025 13:29:14 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:29:19 UTC] Message WhatsApp envoyé avec succès, SID: MMb60266f7f0d87dae7146da164bdc60d0
+[02-Apr-2025 13:29:26 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:29:33 UTC] Message WhatsApp envoyé avec succès, SID: MMa92f85fd5b6c7e135d96ce1907b88175
+[02-Apr-2025 13:29:39 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:29:45 UTC] Message WhatsApp envoyé avec succès, SID: MM0848cf5a385a791232867734d27dc594
+[02-Apr-2025 13:29:51 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:29:57 UTC] Message WhatsApp envoyé avec succès, SID: MM072ff8bd33bcbf71cad78bf6e50df3cd
+[02-Apr-2025 13:30:04 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:30:12 UTC] Message WhatsApp envoyé avec succès, SID: MMf100c766310f26d386b52124eca9876c
+[02-Apr-2025 13:30:19 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:30:26 UTC] Message WhatsApp envoyé avec succès, SID: MM453a50f7b9c714e7036b5d70b0ced698
+[02-Apr-2025 13:30:32 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:30:38 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[02-Apr-2025 13:30:46 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:30:53 UTC] Message WhatsApp envoyé avec succès, SID: MM21e293e109c999166793c4e11cff078e
+[02-Apr-2025 13:31:00 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:31:08 UTC] Message WhatsApp envoyé avec succès, SID: MMfdcbb60cb741c82a8af4c11c5d07dc8f
+[02-Apr-2025 13:31:26 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:31:33 UTC] Message WhatsApp envoyé avec succès, SID: MM5553f8d820764a1dca8126179aea1c75
+[02-Apr-2025 13:31:43 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:31:49 UTC] Message WhatsApp envoyé avec succès, SID: MM4ca2e627c7dd49dd0dfcb42eaa10b2b4
+[02-Apr-2025 13:32:00 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:32:06 UTC] Message WhatsApp envoyé avec succès, SID: MMe9e1ac759ffb992b3501b5c00eb2348a
+[02-Apr-2025 13:34:16 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[02-Apr-2025 13:34:23 UTC] Message WhatsApp envoyé avec succès, SID: MM9930e697223f9f0cfcd4cd40c4d695c6
+[03-Apr-2025 13:35:11 UTC] Message WhatsApp envoyé avec succès, SID: MMc5cf1bd13566cf243006ccdf879daba3
+[03-Apr-2025 13:38:07 UTC] Message WhatsApp envoyé avec succès, SID: MM47c1fd539db3055c14482f75b5718172
+[03-Apr-2025 14:41:18 UTC] Message WhatsApp envoyé avec succès, SID: MMeb6a7dcf3b0284418e38623e5505af85
+[03-Apr-2025 14:41:25 UTC] Message WhatsApp envoyé avec succès, SID: MM11ac5b143dfe415429a98eb878484377
+[03-Apr-2025 17:03:28 UTC] Message WhatsApp envoyé avec succès, SID: MMdfc06081decd0fce5310ee0c3308c0fd
+[03-Apr-2025 17:03:33 UTC] Message WhatsApp envoyé avec succès, SID: MM9468d07223c5169fd6997f905f3e4ca7
+[04-Apr-2025 09:13:02 UTC] Message WhatsApp envoyé avec succès, SID: MM12d7387489d23c473865e24eb38d7c50
+[04-Apr-2025 09:13:07 UTC] Message WhatsApp envoyé avec succès, SID: MM0e804ea69d621ca4ed8db4b094d9f95a
+[04-Apr-2025 09:43:47 UTC] Message WhatsApp envoyé avec succès, SID: MMc3b96b209128d3d4f59528a82903bf6f
+[04-Apr-2025 09:43:50 UTC] Message WhatsApp envoyé avec succès, SID: MMf7dd26a8421c5a4fdca20a4805c5e160
+[04-Apr-2025 09:43:54 UTC] Message WhatsApp envoyé avec succès, SID: MM39382bab6322f8eef82d4fb8de924c17
+[04-Apr-2025 09:43:57 UTC] Message WhatsApp envoyé avec succès, SID: MM2cafc75693b2b8676e0ea497e991aec5
+[04-Apr-2025 09:44:00 UTC] Message WhatsApp envoyé avec succès, SID: MM63c7cf010a1e6dcfff1c2cd7055bbc0a
+[04-Apr-2025 09:44:04 UTC] Message WhatsApp envoyé avec succès, SID: MM580cc816004af6d4435ffd9c2bad8ff6
+[04-Apr-2025 09:44:08 UTC] Message WhatsApp envoyé avec succès, SID: MMff53e3adee211a18613da956adb8cc46
+[04-Apr-2025 11:09:52 UTC] Message WhatsApp envoyé avec succès, SID: MM662500011ec53ebdb45ad66a417b1828
+[04-Apr-2025 11:09:56 UTC] Message WhatsApp envoyé avec succès, SID: MMf4522f5d93ff271e347ce7a410349c8f
+[04-Apr-2025 12:24:49 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:24:56 UTC] Message WhatsApp envoyé avec succès, SID: MMbed290347b3294ddfc8194f669f0b86c
+[04-Apr-2025 12:25:06 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:25:20 UTC] Message WhatsApp envoyé avec succès, SID: MM78d574fc0ba55114d4e08ef2301b9457
+[04-Apr-2025 12:26:30 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:26:36 UTC] Message WhatsApp envoyé avec succès, SID: MMf04cfa8c3b60306c7008e2693b660a33
+[04-Apr-2025 12:37:47 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:37:54 UTC] Message WhatsApp envoyé avec succès, SID: MMb5ca5af1f710e89dd14cb45f00efc3c5
+[04-Apr-2025 12:38:01 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:38:08 UTC] Message WhatsApp envoyé avec succès, SID: MM4d33edf17eda66b749e510f04f0c7bb8
+[04-Apr-2025 12:38:41 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:39:07 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:39:12 UTC] Message WhatsApp envoyé avec succès, SID: MMff05ec219bab3e9b1a534031476a0575
+[04-Apr-2025 12:39:21 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:39:42 UTC] Message WhatsApp envoyé avec succès, SID: MMd7c1ae961073493c202247faf9aa5287
+[04-Apr-2025 12:39:49 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:39:54 UTC] Message WhatsApp envoyé avec succès, SID: MMa3c87cd4a4e5f5f07931189a1c507463
+[04-Apr-2025 12:40:01 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:40:09 UTC] Message WhatsApp envoyé avec succès, SID: MMa6f47f2f32824eda356d4e8e285bf153
+[04-Apr-2025 12:40:24 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:40:30 UTC] Message WhatsApp envoyé avec succès, SID: MM7a890af32982d8d6ee151620537f55d6
+[04-Apr-2025 12:41:46 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:41:51 UTC] Message WhatsApp envoyé avec succès, SID: MM8e6ac8881cf0f58ab35a33d6e330dbcd
+[04-Apr-2025 12:42:09 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:43:01 UTC] Message WhatsApp envoyé avec succès, SID: MM73e0e63b94e175d7b45b3776dc44fdfa
+[04-Apr-2025 12:43:12 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:43:18 UTC] Message WhatsApp envoyé avec succès, SID: MM044835e95aca95c3797cbe06f7adc3d3
+[04-Apr-2025 12:43:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:43:38 UTC] Message WhatsApp envoyé avec succès, SID: MM9442faa595fe3dceaecbb7cc1aa16257
+[04-Apr-2025 12:43:45 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:43:51 UTC] Message WhatsApp envoyé avec succès, SID: MM992a479da87ffd5872366256e42b1db9
+[04-Apr-2025 12:44:00 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:44:07 UTC] Message WhatsApp envoyé avec succès, SID: MM844355da93e02cf7369cbebafd6e433f
+[04-Apr-2025 12:44:16 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:44:22 UTC] Message WhatsApp envoyé avec succès, SID: MM25d284cd7966282f0ffa31df5477bc53
+[04-Apr-2025 12:44:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:44:36 UTC] Message WhatsApp envoyé avec succès, SID: MMa5540379718d7eb6a984b2089f0104ec
+[04-Apr-2025 12:44:46 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:44:55 UTC] Message WhatsApp envoyé avec succès, SID: MM3655736054585af586a06e220e91aa72
+[04-Apr-2025 12:45:01 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:45:09 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[04-Apr-2025 12:45:11 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[04-Apr-2025 12:45:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:45:35 UTC] Message WhatsApp envoyé avec succès, SID: MMc89be63fc075a3ac553952ffac204090
+[04-Apr-2025 12:45:45 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:46:00 UTC] Message WhatsApp envoyé avec succès, SID: MM20e3f010039256b05882961db540a191
+[04-Apr-2025 12:46:26 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:46:31 UTC] Message WhatsApp envoyé avec succès, SID: MM0f063434a9c2b7ca67c3a052981ea183
+[04-Apr-2025 12:46:38 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:46:46 UTC] Message WhatsApp envoyé avec succès, SID: MM6b767912810aa517b770cd23a764fcbe
+[04-Apr-2025 12:47:41 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:47:49 UTC] Message WhatsApp envoyé avec succès, SID: MM4ed95f747bd0854c0a163a45b37af012
+[04-Apr-2025 12:47:58 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:48:04 UTC] Message WhatsApp envoyé avec succès, SID: MMfa496d4d5ba2b0626079904c7e310c0d
+[04-Apr-2025 12:48:12 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:48:21 UTC] Message WhatsApp envoyé avec succès, SID: MM598fffafc73cd85a5169ed086aa2e2f4
+[04-Apr-2025 12:48:36 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:48:48 UTC] Message WhatsApp envoyé avec succès, SID: MMdf33774c370a04cd0bd8c6dc69358ec6
+[04-Apr-2025 12:48:57 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:49:05 UTC] Message WhatsApp envoyé avec succès, SID: MM7e3b8b7d39ad3c5fa5b5c7fc619e9dbf
+[04-Apr-2025 12:49:14 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:49:21 UTC] Message WhatsApp envoyé avec succès, SID: MMe0c74941e3d8216ac3fab27c5f3f3ca9
+[04-Apr-2025 12:49:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:49:37 UTC] Message WhatsApp envoyé avec succès, SID: MMb2018c8a1b2f23ad844ac40e966a101a
+[04-Apr-2025 12:49:46 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:49:52 UTC] Message WhatsApp envoyé avec succès, SID: MMfa294719c6a03ced1815c2ee662521da
+[04-Apr-2025 12:57:06 UTC] Message WhatsApp envoyé avec succès, SID: MMfe654e8edbc909ec1c62798a8ebb57c0
+[04-Apr-2025 12:57:14 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:57:21 UTC] Message WhatsApp envoyé avec succès, SID: MM3ce73647c6de874ac75a89afe81e8da7
+[04-Apr-2025 12:57:42 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:57:49 UTC] Message WhatsApp envoyé avec succès, SID: MM9938efecdefb42dad8957094a0ef9261
+[04-Apr-2025 12:58:07 UTC] Message WhatsApp envoyé avec succès, SID: MM91f2a0d08845ab24d212a766673bdefa
+[04-Apr-2025 12:58:30 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:58:38 UTC] Message WhatsApp envoyé avec succès, SID: MMdb7b7bd93cef3f06cf09d040a9f69490
+[04-Apr-2025 12:58:50 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:58:58 UTC] Message WhatsApp envoyé avec succès, SID: MM7e73b91933ed9c80de33a4d937b35a2b
+[04-Apr-2025 12:59:09 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:59:16 UTC] Message WhatsApp envoyé avec succès, SID: MMdef6008346916ddb72f818867e1a6ba1
+[04-Apr-2025 12:59:33 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 12:59:39 UTC] Message WhatsApp envoyé avec succès, SID: MM0464e40d355bbd5628bd2a93bbb51e48
+[04-Apr-2025 13:19:55 UTC] Message WhatsApp envoyé avec succès, SID: MMdf36a605fea9d620a544b9569af8876e
+[04-Apr-2025 13:19:59 UTC] Message WhatsApp envoyé avec succès, SID: MM791c2e43141aff40a5447e4ff28605d9
+[04-Apr-2025 13:20:02 UTC] Message WhatsApp envoyé avec succès, SID: MMfcf27ecd22475cf0a3915a22359f2cbc
+[04-Apr-2025 13:27:11 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 13:27:18 UTC] Message WhatsApp envoyé avec succès, SID: MMcd589f386ec5dc69edfd1c08f242865f
+[04-Apr-2025 13:27:24 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 13:27:31 UTC] Message WhatsApp envoyé avec succès, SID: MMa3dea7085c75011361cf83e8d12caa67
+[04-Apr-2025 13:27:43 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 13:27:49 UTC] Message WhatsApp envoyé avec succès, SID: MM407da049943668889c8e524ac115cef2
+[04-Apr-2025 15:21:42 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:21:56 UTC] Message WhatsApp envoyé avec succès, SID: MM8c8108b4bc573e44ef8783fc7e63ecf0
+[04-Apr-2025 15:22:03 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:22:09 UTC] Message WhatsApp envoyé avec succès, SID: MMc467aed0fc6b9cee2a4cf0eecdb8a9bf
+[04-Apr-2025 15:22:16 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:22:23 UTC] Message WhatsApp envoyé avec succès, SID: MM9d701426a1a0baa8faaed4edca870430
+[04-Apr-2025 15:22:31 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:22:37 UTC] Message WhatsApp envoyé avec succès, SID: MMafcd382c117d71d3458c23e405ed15c5
+[04-Apr-2025 15:22:47 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:22:52 UTC] Message WhatsApp envoyé avec succès, SID: MM99dba7ca76e9aa320382b4bae975a233
+[04-Apr-2025 15:22:58 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:23:05 UTC] Message WhatsApp envoyé avec succès, SID: MM92b066a111eab6a119871f882414b81c
+[04-Apr-2025 15:23:15 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:23:23 UTC] Message WhatsApp envoyé avec succès, SID: MM16826f51298c85ceac8646b5ab79b79a
+[04-Apr-2025 15:23:31 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:23:36 UTC] Message WhatsApp envoyé avec succès, SID: MMb95632daa153bd5cc0a5dad3c9430b7d
+[04-Apr-2025 15:23:42 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:23:48 UTC] Message WhatsApp envoyé avec succès, SID: MM85a563efdd6dbeb57ffe2263b9231f05
+[04-Apr-2025 15:23:54 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:24:00 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[04-Apr-2025 15:24:08 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:24:17 UTC] Message WhatsApp envoyé avec succès, SID: MMaee1b678ee5fe83edf4fff957d412799
+[04-Apr-2025 15:24:24 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:24:30 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[04-Apr-2025 15:24:37 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[04-Apr-2025 15:24:43 UTC] Message WhatsApp envoyé avec succès, SID: MM6f1bd6b2190065f6b0567a7e06af6964
+[07-Apr-2025 08:13:34 UTC] Message WhatsApp envoyé avec succès, SID: MM0908236eb1914bf31c21e63d18edca80
+[07-Apr-2025 09:26:21 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The 'To' number +225 is not a valid phone number.
+[07-Apr-2025 09:26:31 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The 'To' number +225 is not a valid phone number.
+[07-Apr-2025 11:03:02 UTC] Message WhatsApp envoyé avec succès, SID: MM799c96d3fc408371bb4debd525d34a5c
+[07-Apr-2025 11:03:08 UTC] Message WhatsApp envoyé avec succès, SID: MM8d666f5cb69fdd721835e2799739e6d9
+[07-Apr-2025 12:13:00 UTC] Message WhatsApp envoyé avec succès, SID: MM7773fdee6b7ce3b76b87844f33e28d09
+[07-Apr-2025 12:13:05 UTC] Message WhatsApp envoyé avec succès, SID: MM986fba07d869ed309e78986ee34f49b1
+[07-Apr-2025 17:13:46 UTC] Message WhatsApp envoyé avec succès, SID: MMe4ca25e0d4453e544008bc207a58e133
+[07-Apr-2025 17:45:05 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:45:21 UTC] Message WhatsApp envoyé avec succès, SID: MM5d56838300e868da2de8037559e0cc4b
+[07-Apr-2025 17:45:54 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:46:03 UTC] Message WhatsApp envoyé avec succès, SID: MM00e3dfb2bc0a5eb9cf34d8ada81eb013
+[07-Apr-2025 17:46:17 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:46:31 UTC] Message WhatsApp envoyé avec succès, SID: MMffb9dab1635157debf1ad7fcb593a7bc
+[07-Apr-2025 17:46:41 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:46:50 UTC] Message WhatsApp envoyé avec succès, SID: MM8507080556cd6629fe33d770f9814718
+[07-Apr-2025 17:47:22 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:47:53 UTC] Message WhatsApp envoyé avec succès, SID: MM691bf383d0abc466985597549a5c0e15
+[07-Apr-2025 17:48:44 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:48:54 UTC] Message WhatsApp envoyé avec succès, SID: MM6151e87243a59c42adb1c652623eda9f
+[07-Apr-2025 17:49:07 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:49:14 UTC] Message WhatsApp envoyé avec succès, SID: MM0fa06ab63a90b23ef90809ec872eb70a
+[07-Apr-2025 17:49:26 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:49:34 UTC] Message WhatsApp envoyé avec succès, SID: MM36eed17de001270e62f960e3b876a2b6
+[07-Apr-2025 17:49:48 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:50:16 UTC] Message WhatsApp envoyé avec succès, SID: MMb6847036da0209bcf5bfd678cc31eb44
+[07-Apr-2025 17:50:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:50:37 UTC] Message WhatsApp envoyé avec succès, SID: MMd222b630468959d7fc77b1fcb9a1fbc0
+[07-Apr-2025 17:50:46 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:50:53 UTC] Message WhatsApp envoyé avec succès, SID: MM1fd4b33a088852e8d031efb052dce0d6
+[07-Apr-2025 17:51:10 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:51:16 UTC] Message WhatsApp envoyé avec succès, SID: MM430d4eca3b25af3a61b17873d5883852
+[07-Apr-2025 17:51:50 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:51:58 UTC] Message WhatsApp envoyé avec succès, SID: MM427c1de5dcf8621696b738c82bf4748c
+[07-Apr-2025 17:52:07 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:52:13 UTC] Message WhatsApp envoyé avec succès, SID: MMa3fc3a4e5b6e3057cc1d6248dd1fc243
+[07-Apr-2025 17:52:26 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:52:32 UTC] Message WhatsApp envoyé avec succès, SID: MMfee3e9052866dfab06f63041242c9eb7
+[07-Apr-2025 17:52:40 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:52:47 UTC] Message WhatsApp envoyé avec succès, SID: MM65afa5c321e71da2ebf1df26fb37a007
+[07-Apr-2025 17:52:53 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:53:03 UTC] Message WhatsApp envoyé avec succès, SID: MMccc992807ca1b7c96ffa13d941279b1b
+[07-Apr-2025 17:53:12 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:53:23 UTC] Message WhatsApp envoyé avec succès, SID: MMe5e8b9e208f7b9416c12c1608d4f88d4
+[07-Apr-2025 17:53:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:53:36 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[07-Apr-2025 17:53:43 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:53:50 UTC] Erreur lors de l'envoi du message: [HTTP 400] Unable to create record: The Content Variables parameter is invalid.
+[07-Apr-2025 17:53:57 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:54:04 UTC] Message WhatsApp envoyé avec succès, SID: MM0a4d4f47495c583fab343785885decd2
+[07-Apr-2025 17:54:29 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:54:54 UTC] Message WhatsApp envoyé avec succès, SID: MMcfaf04316d2c6b75ef8e43faebbaff63
+[07-Apr-2025 17:55:12 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:55:20 UTC] Message WhatsApp envoyé avec succès, SID: MM83d5524762e977e07aa59e5003d61bb6
+[07-Apr-2025 17:55:39 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:55:53 UTC] Message WhatsApp envoyé avec succès, SID: MM5344f89355c8b2b43dd6f23bef467b43
+[07-Apr-2025 17:56:04 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:56:11 UTC] Message WhatsApp envoyé avec succès, SID: MM349cf2ed3bd978bf8efa6116441d1a0c
+[07-Apr-2025 17:56:18 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:56:24 UTC] Message WhatsApp envoyé avec succès, SID: MMba23bb2216d9d03a001622095742f666
+[07-Apr-2025 17:56:34 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:56:41 UTC] Message WhatsApp envoyé avec succès, SID: MMd3b7759012c0518342dd2db2f3397c6b
+[07-Apr-2025 17:56:47 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:56:54 UTC] Message WhatsApp envoyé avec succès, SID: MMb2d4cca85232c2fe386c8bfe65704443
+[07-Apr-2025 17:57:00 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:57:08 UTC] Message WhatsApp envoyé avec succès, SID: MM905c3bd3d9b31171d181cb81ee4fcc2c
+[07-Apr-2025 17:58:47 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:59:04 UTC] Message WhatsApp envoyé avec succès, SID: MM76ec5a4d6b46cca19fce2c3f8673229f
+[07-Apr-2025 17:59:23 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 17:59:32 UTC] Message WhatsApp envoyé avec succès, SID: MMa0f1daf2932676f596f24ece756505c7
+[07-Apr-2025 18:00:17 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 18:00:24 UTC] Message WhatsApp envoyé avec succès, SID: MM21f52c0f12f48e1a156aea61a7082203
+[07-Apr-2025 19:22:09 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 19:22:18 UTC] Message WhatsApp envoyé avec succès, SID: MM6993fdfab0dedcbfd98b6bfe326ad2ce
+[07-Apr-2025 19:22:49 UTC] Erreur d'envoi du message : [HTTP 400] Unable to create record: The ContentSid you are using is not valid
+[07-Apr-2025 19:23:13 UTC] Message WhatsApp envoyé avec succès, SID: MMfab818c27890d566f83b674d967f72a8
+[08-Apr-2025 08:59:35 UTC] Message WhatsApp envoyé avec succès, SID: MM3700c412fae57cf8935df7b7eac2d26d
+[08-Apr-2025 08:59:44 UTC] Message WhatsApp envoyé avec succès, SID: MMadd4283addce3f43273d83388324a39f
+[08-Apr-2025 08:59:50 UTC] Message WhatsApp envoyé avec succès, SID: MMe8f23a87f1000b8328fd4ad34f0043c3
+[08-Apr-2025 10:14:00 UTC] Message WhatsApp envoyé avec succès, SID: MM445f1cb2f976832408851a26595c8206
+[08-Apr-2025 10:24:31 UTC] Message WhatsApp envoyé avec succès, SID: MMd598cfa5339c41f951bc3b598ebf8f0c
+[08-Apr-2025 10:24:35 UTC] Message WhatsApp envoyé avec succès, SID: MMeb2992296a380a00c1694d2482389422

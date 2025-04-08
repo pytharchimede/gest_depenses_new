@@ -1,0 +1,11 @@
+.card {
+    z-index: 9;
+    text-align: center;
+    cursor: move;
+}
+
+.card:hover {
+    z-index: 10;
+    text-align: center;
+    cursor: move;
+}
