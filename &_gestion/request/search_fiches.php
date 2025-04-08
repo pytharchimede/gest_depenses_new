@@ -1,6 +1,6 @@
 <?php
-require_once 'model/Database.php';
-require_once 'model/Fiche.php';
+require_once '../model/Database.php';
+require_once '../model/Fiche.php';
 
 $databaseObj = new Database();
 $pdo = $databaseObj->getConnection();

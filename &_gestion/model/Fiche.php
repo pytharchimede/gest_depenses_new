@@ -47,13 +47,16 @@ class Fiche
 
     public function searchFiches($beneficiaire, $statut, $date_debut, $date_fin, $date_decaissement, $chantier, $affectation)
     {
-        $sql = "SELECT * FROM fiches WHERE 1=1";
+        $sql = "SELECT * FROM fiche WHERE  etat_fiche = 1 
+                AND decaisse = 0 
+                AND sauvegarder = 0 
+                AND otp_autorise = 1 ";
 
         if ($beneficiaire) {
-            $sql .= " AND beneficiaire_fiche LIKE :beneficiaire";
+            $sql .= " AND beficiaire_fiche LIKE :beneficiaire";
         }
         if ($statut) {
-            $sql .= " AND statut_fiche = :statut";
+            $sql .= " AND etat_fiche = :statut";
         }
         if ($date_debut) {
             $sql .= " AND date_creat_fiche >= :date_debut";

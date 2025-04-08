@@ -49,7 +49,7 @@ $chantiers = $chantierObj->getAllChantier();
 
         <?php include 'form/form_search_fiche_decaisse.php'; ?>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 resultsContainer">
             <?php foreach ($fichesADecaisser as $fiche): ?>
                 <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
 
@@ -111,7 +111,10 @@ $chantiers = $chantierObj->getAllChantier();
         }
 
         function searchFiches() {
+
             let formData = new FormData(document.getElementById('searchForm'));
+
+            console.log(formData);
 
             fetch('request/search_fiches.php', {
                     method: 'POST',
@@ -133,7 +136,7 @@ $chantiers = $chantierObj->getAllChantier();
         }
 
         function updateResults(fiches) {
-            let resultsContainer = document.querySelector('.grid');
+            let resultsContainer = document.querySelector('.resultsContainer');
             resultsContainer.innerHTML = ''; // Effacer les anciens résultats
 
             fiches.forEach(fiche => {

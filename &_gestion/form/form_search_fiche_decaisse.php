@@ -76,7 +76,7 @@
             class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-semibold">
             Rechercher
         </button>
-        <a href="page_resultat.php"
+        <a href="new_decaisse.php"
             class="text-sm text-gray-600 hover:underline">Réinitialiser</a>
     </div>
 </form>
