@@ -9,7 +9,7 @@
         <div class="hidden lg:block flex-1 mx-4">
             <input type="text"
                 class="w-full border rounded-lg px-4 py-2 text-sm"
-                placeholder="Rechercher... (Ex: Code formation, matricule, etc.)" />
+                placeholder="Rechercher... (Ex: Code fiche, matricule, nom du bénéficiaire, etc.)" />
         </div>
 
         <!-- Profil utilisateur -->

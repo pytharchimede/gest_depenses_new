@@ -7,7 +7,10 @@ require_once 'model/Visite.php';
 require_once 'model/Fiche.php';
 require_once 'model/Affectation.php';
 require_once 'model/Chantier.php';
+require_once 'model/SessionManager.php';
 
+// Vérifie si l'utilisateur est connecté avant d'afficher la page
+SessionManager::redirectIfNotLoggedIn();
 
 // Instantiations
 $databaseObj = new Database();
