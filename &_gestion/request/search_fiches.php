@@ -19,4 +19,10 @@ $affectation = $_POST['affectation'] ?? '';
 // Appel de la méthode pour récupérer les fiches filtrées
 $fiches = $ficheObj->searchFiches($beneficiaire, $statut, $date_debut, $date_fin, $date_decaissement, $chantier, $affectation);
 
-echo json_encode(['success' => true, 'fiches' => $fiches]);
+
+
+if (empty($fiches)) {
+    echo json_encode(['success' => false, 'message' => 'Aucune donnée']);
+} else {
+    echo json_encode(['success' => true, 'fiches' => $fiches]);
+}
