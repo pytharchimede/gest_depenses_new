@@ -115,7 +115,7 @@ $HTML .= '</div>';
 $HTML .= '</div>';
 
 if ($count > 0) {
-    $HTML .= '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">';
+    $HTML .= '<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">';
 
     foreach ($records as $row) {
         // Récupérer l'affectation
@@ -125,11 +125,11 @@ if ($count > 0) {
         $lib_aff = $iaff ? $iaff['lib_affectation'] : 'Non définie';
 
         $HTML .= '<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">';
-        $HTML .= '<div class="p-6">';
+        $HTML .= '<div class="p-4">';
 
         // En-tête de la carte
-        $HTML .= '<div class="flex justify-between items-start mb-4">';
-        $HTML .= '<h3 class="text-lg font-bold text-gray-800">Fiche N° ' . $row['num_fiche'] . '</h3>';
+        $HTML .= '<div class="flex justify-between items-start mb-3">';
+        $HTML .= '<h3 class="text-base font-bold text-gray-800">Fiche N° ' . $row['num_fiche'] . '</h3>';
 
         // Menu déroulant
         $HTML .= '<div class="relative">';
@@ -148,40 +148,40 @@ if ($count > 0) {
         $HTML .= '</div>';
 
         // Contenu principal
-        $HTML .= '<div class="flex items-start space-x-4">';
+        $HTML .= '<div class="flex items-start space-x-3">';
 
         // Photo
         $HTML .= '<div class="flex-shrink-0">';
         $photo = ($row['photo_beneficiaire'] != '') ? $row['photo_beneficiaire'] : 'default_picture.png';
-        $HTML .= '<img class="w-16 h-16 rounded-full object-cover border-2 border-gray-200" src="../../img_demande/' . $photo . '" alt="Photo bénéficiaire">';
+        $HTML .= '<img class="w-12 h-12 rounded-full object-cover border-2 border-gray-200" src="../../img_demande/' . $photo . '" alt="Photo bénéficiaire">';
         $HTML .= '</div>';
 
         // Informations
         $HTML .= '<div class="flex-1">';
-        $HTML .= '<h4 class="font-semibold text-gray-800 mb-1">' . htmlspecialchars($row['beficiaire_fiche']) . '</h4>';
-        $HTML .= '<p class="text-sm text-indigo-600 mb-2">' . htmlspecialchars($lib_aff) . '</p>';
-        $HTML .= '<p class="text-sm text-gray-600 mb-3">' . htmlspecialchars($row['designation_fiche']) . '</p>';
+        $HTML .= '<h4 class="font-semibold text-gray-800 mb-1 text-sm">' . htmlspecialchars($row['beficiaire_fiche']) . '</h4>';
+        $HTML .= '<p class="text-xs text-indigo-600 mb-1">' . htmlspecialchars($lib_aff) . '</p>';
+        $HTML .= '<p class="text-xs text-gray-600 mb-2">' . htmlspecialchars($row['designation_fiche']) . '</p>';
 
         // Détails en badges
-        $HTML .= '<div class="space-y-2">';
-        $HTML .= '<div class="flex items-center text-sm text-gray-600">';
-        $HTML .= '<i class="fas fa-phone w-4 mr-2"></i>';
+        $HTML .= '<div class="space-y-1">';
+        $HTML .= '<div class="flex items-center text-xs text-gray-600">';
+        $HTML .= '<i class="fas fa-phone w-3 mr-1"></i>';
         $HTML .= '<span>' . htmlspecialchars($row['tel_beneficiaire_fiche']) . '</span>';
         $HTML .= '</div>';
 
-        $HTML .= '<div class="flex items-center text-sm text-gray-600">';
-        $HTML .= '<i class="fas fa-credit-card w-4 mr-2"></i>';
+        $HTML .= '<div class="flex items-center text-xs text-gray-600">';
+        $HTML .= '<i class="fas fa-credit-card w-3 mr-1"></i>';
         $HTML .= '<span>' . htmlspecialchars($row['num_piece']) . '</span>';
         $HTML .= '</div>';
 
-        $HTML .= '<div class="flex items-center text-sm">';
-        $HTML .= '<i class="fas fa-money-bill-wave w-4 mr-2 text-green-600"></i>';
+        $HTML .= '<div class="flex items-center text-xs">';
+        $HTML .= '<i class="fas fa-money-bill-wave w-3 mr-1 text-green-600"></i>';
         $HTML .= '<span class="font-semibold text-green-600">' . number_format($row['montant_fiche'], 0, ',', ' ') . ' FCFA</span>';
         $HTML .= '</div>';
 
         $HTML .= '<div class="flex items-center text-xs text-gray-500">';
-        $HTML .= '<i class="fas fa-clock w-4 mr-2"></i>';
-        $HTML .= '<span>Créé le ' . date("d/m/Y H:i:s", strtotime($row['date_creat_fiche'])) . '</span>';
+        $HTML .= '<i class="fas fa-clock w-3 mr-1"></i>';
+        $HTML .= '<span>' . date("d/m/Y", strtotime($row['date_creat_fiche'])) . '</span>';
         $HTML .= '</div>';
         $HTML .= '</div>';
 
@@ -189,25 +189,25 @@ if ($count > 0) {
         $HTML .= '</div>';
 
         // Boutons d'action
-        $HTML .= '<div class="mt-4 pt-4 border-t border-gray-200">';
-        $HTML .= '<div class="flex space-x-2">';
+        $HTML .= '<div class="mt-3 pt-3 border-t border-gray-200">';
+        $HTML .= '<div class="flex space-x-1">';
 
         if ($_SESSION['is_valid'] == 1) {
-            $HTML .= '<a href="src/valider_fiche.php?num_fiche_valide=' . $row['num_fiche'] . '" class="flex-1 bg-green-600 text-white text-center py-2 px-3 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">';
+            $HTML .= '<a href="src/valider_fiche.php?num_fiche_valide=' . $row['num_fiche'] . '" class="flex-1 bg-green-600 text-white text-center py-1 px-2 rounded text-xs font-medium hover:bg-green-700 transition-colors">';
             $HTML .= '<i class="fas fa-check mr-1"></i> Valider';
             $HTML .= '</a>';
 
-            $HTML .= '<button onclick="reporterFiche(\'' . $row['num_fiche'] . '\')" class="flex-1 bg-blue-600 text-white text-center py-2 px-3 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">';
+            $HTML .= '<button onclick="reporterFiche(\'' . $row['num_fiche'] . '\')" class="flex-1 bg-blue-600 text-white text-center py-1 px-2 rounded text-xs font-medium hover:bg-blue-700 transition-colors">';
             $HTML .= '<i class="fas fa-flag mr-1"></i> Reporter';
             $HTML .= '</button>';
 
-            $HTML .= '<a href="detail_refus.php?num_fiche_refuse=' . $row['num_fiche'] . '" class="flex-1 bg-red-600 text-white text-center py-2 px-3 rounded-md text-sm font-medium hover:bg-red-700 transition-colors">';
+            $HTML .= '<a href="detail_refus.php?num_fiche_refuse=' . $row['num_fiche'] . '" class="flex-1 bg-red-600 text-white text-center py-1 px-2 rounded text-xs font-medium hover:bg-red-700 transition-colors">';
             $HTML .= '<i class="fas fa-times mr-1"></i> Refuser';
             $HTML .= '</a>';
         }
 
         if ($_SESSION['is_modif'] == 1) {
-            $HTML .= '<a target="_blank" href="modifier_fiche.php?num_fiche=' . $row['num_fiche'] . '" class="bg-orange-600 text-white text-center py-2 px-3 rounded-md text-sm font-medium hover:bg-orange-700 transition-colors">';
+            $HTML .= '<a target="_blank" href="modifier_fiche.php?num_fiche=' . $row['num_fiche'] . '" class="bg-orange-600 text-white text-center py-1 px-2 rounded text-xs font-medium hover:bg-orange-700 transition-colors">';
             $HTML .= '<i class="fas fa-edit mr-1"></i> Modifier';
             $HTML .= '</a>';
         }

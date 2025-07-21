@@ -48,7 +48,7 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
     <body class="bg-gray-50">
         <!-- Navigation moderne -->
         <nav class="bg-white shadow-lg">
-            <div class="max-w-7xl mx-auto px-4">
+            <div class="w-full px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
@@ -88,41 +88,45 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
 
         <!-- Menu horizontal -->
         <div class="bg-indigo-600">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="flex space-x-8 overflow-x-auto">
-                    <a href="accueil.php" class="flex items-center px-3 py-4 text-sm font-medium text-white bg-indigo-700 rounded-t-lg">
-                        <i class="fas fa-tachometer-alt mr-2"></i>
-                        Tableau de bord
+            <div class="w-full px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-4 lg:gap-8 overflow-x-auto py-2 sm:py-0">
+                    <a href="accueil.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-white bg-indigo-700 rounded-lg sm:rounded-t-lg whitespace-nowrap">
+                        <i class="fas fa-tachometer-alt mr-1 sm:mr-2"></i>
+                        <span class="hidden sm:inline">Tableau de bord</span>
+                        <span class="sm:hidden">Tableau</span>
                     </a>
-                    <a href="accepte.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-check mr-2"></i>
+                    <a href="accepte.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-check mr-1 sm:mr-2"></i>
                         Acceptées
                     </a>
-                    <a href="sauvegarder.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-ban mr-2"></i>
+                    <a href="sauvegarder.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-ban mr-1 sm:mr-2"></i>
                         Planifiées
                     </a>
-                    <a href="decaisse.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-money-bill-wave mr-2"></i>
-                        A Décaisser
+                    <a href="decaisse.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-money-bill-wave mr-1 sm:mr-2"></i>
+                        <span class="hidden sm:inline">A Décaisser</span>
+                        <span class="sm:hidden">Décaisser</span>
                     </a>
-                    <a href="point_financier.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-chart-line mr-2"></i>
-                        Point financier
+                    <a href="point_financier.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-chart-line mr-1 sm:mr-2"></i>
+                        <span class="hidden sm:inline">Point financier</span>
+                        <span class="sm:hidden">Financier</span>
                     </a>
-                    <a href="statistique.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-calculator mr-2"></i>
+                    <a href="statistique.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-calculator mr-1 sm:mr-2"></i>
                         Statistique
                     </a>
-                    <a href="point_chantier.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-chart-area mr-2"></i>
-                        Point chantier
+                    <a href="point_chantier.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                        <i class="fas fa-chart-area mr-1 sm:mr-2"></i>
+                        <span class="hidden sm:inline">Point chantier</span>
+                        <span class="sm:hidden">Chantier</span>
                     </a>
 
                     <!-- Menu Sécurité avec dropdown -->
                     <div class="relative">
-                        <button onclick="toggleSecurityMenu()" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                            <i class="fas fa-shield-alt mr-2"></i>
+                        <button onclick="toggleSecurityMenu()" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                            <i class="fas fa-shield-alt mr-1 sm:mr-2"></i>
                             Sécurité
                             <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
@@ -142,24 +146,26 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                     </div>
 
                     <?php if ($_SESSION['id_type_groupe'] == 1) { ?>
-                        <a href="parametre/parametre.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                            <i class="fas fa-cogs mr-2"></i>
+                        <a href="parametre/parametre.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-indigo-100 hover:text-white whitespace-nowrap">
+                            <i class="fas fa-cogs mr-1 sm:mr-2"></i>
                             Paramètres
                         </a>
                     <?php } ?>
 
                     <!-- Notifications dynamiques -->
                     <?php if ($_SESSION['is_valid'] == 1) { ?>
-                        <a href="accueil_approbation.php" class="flex items-center px-3 py-4 text-sm font-medium text-orange-300 hover:text-white">
-                            <i class="fas fa-spinner fa-spin mr-2"></i>
-                            En attente d'approbation
+                        <a href="accueil_approbation.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-orange-300 hover:text-white whitespace-nowrap">
+                            <i class="fas fa-spinner fa-spin mr-1 sm:mr-2"></i>
+                            <span class="hidden sm:inline">En attente d'approbation</span>
+                            <span class="sm:hidden">Approbation</span>
                         </a>
                     <?php } ?>
 
                     <?php if ($_SESSION['verif_conforme'] == 1) { ?>
-                        <a href="accueil_verif_conforme.php" class="flex items-center px-3 py-4 text-sm font-medium text-orange-300 hover:text-white">
-                            <i class="fas fa-certificate fa-pulse mr-2"></i>
-                            À certifier conforme
+                        <a href="accueil_verif_conforme.php" class="flex items-center px-2 sm:px-3 py-2 sm:py-4 text-xs sm:text-sm font-medium text-orange-300 hover:text-white whitespace-nowrap">
+                            <i class="fas fa-certificate fa-pulse mr-1 sm:mr-2"></i>
+                            <span class="hidden sm:inline">À certifier conforme</span>
+                            <span class="sm:hidden">Conforme</span>
                         </a>
                     <?php } ?>
                 </div>
@@ -167,15 +173,15 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
         </div>
 
         <!-- Contenu principal -->
-        <div class="max-w-7xl mx-auto px-4 py-8">
-            <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">
+        <div class="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-gray-800">
                 Fiches à Analyser
             </h1>
 
             <!-- Formulaire de recherche moderne -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-lg font-semibold mb-4 text-gray-800">Filtres de recherche</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+            <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
+                <h2 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">Filtres de recherche</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
 
                     <!-- Affectation -->
                     <div>
