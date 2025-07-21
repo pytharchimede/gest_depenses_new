@@ -1,17 +1,18 @@
 <?php
 session_start();
 $page = 'accueil';
-if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSION['secur_hop']) && $_SESSION['secur_hop'] != '') {
-    include('../connex.php');
+if ($_SESSION['id_admin_hop'] != '') {
+    include('model/Database.php');
+    include('model/SessionManager.php');
+    $sessionManager = new SessionManager();
+    $sessionManager->validateSession('accueil');
 
-    // Redirections selon les rôles
-    if ($_SESSION['is_planif'] == 1) {
-        header('Location: accueil_planning.php');
-        exit();
-    }
-    if ($_SESSION['is_resp'] == 1) {
-        header('Location: accueil_approbation.php');
-        exit();
+    // Initialisation de la connexion à la base de données
+    try {
+        $database = new Database();
+        $con = $database->getConnection();
+    } catch (Exception $e) {
+        die("Erreur de connexion à la base de données : " . $e->getMessage());
     }
 
     // Enregistrement connexion
@@ -114,52 +115,10 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                         <i class="fas fa-calculator mr-2"></i>
                         Statistique
                     </a>
-                    <a href="point_chantier.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                        <i class="fas fa-chart-area mr-2"></i>
-                        Point chantier
-                    </a>
-
-                    <!-- Menu Sécurité avec dropdown -->
-                    <div class="relative">
-                        <button onclick="toggleSecurityMenu()" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
-                            <i class="fas fa-shield-alt mr-2"></i>
-                            Sécurité
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div id="securityMenu" class="hidden absolute top-full left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                            <a href="profil/profil.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                <i class="fas fa-user mr-2"></i>Profil
-                            </a>
-                            <?php if ($_SESSION['id_type_groupe'] <= 2) { ?>
-                                <a href="utilisateur/utilisateur.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    <i class="fas fa-users mr-2"></i>Utilisateurs
-                                </a>
-                                <a href="historique/historique.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    <i class="fas fa-history mr-2"></i>Traçabilité
-                                </a>
-                            <?php } ?>
-                        </div>
-                    </div>
-
                     <?php if ($_SESSION['id_type_groupe'] == 1) { ?>
                         <a href="parametre/parametre.php" class="flex items-center px-3 py-4 text-sm font-medium text-indigo-100 hover:text-white">
                             <i class="fas fa-cogs mr-2"></i>
                             Paramètres
-                        </a>
-                    <?php } ?>
-
-                    <!-- Notifications dynamiques -->
-                    <?php if ($_SESSION['is_valid'] == 1) { ?>
-                        <a href="accueil_approbation.php" class="flex items-center px-3 py-4 text-sm font-medium text-orange-300 hover:text-white">
-                            <i class="fas fa-spinner fa-spin mr-2"></i>
-                            En attente d'approbation
-                        </a>
-                    <?php } ?>
-
-                    <?php if ($_SESSION['verif_conforme'] == 1) { ?>
-                        <a href="accueil_verif_conforme.php" class="flex items-center px-3 py-4 text-sm font-medium text-orange-300 hover:text-white">
-                            <i class="fas fa-certificate fa-pulse mr-2"></i>
-                            À certifier conforme
                         </a>
                     <?php } ?>
                 </div>
@@ -293,50 +252,53 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
 
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="js/function_accueil_modern.js"></script>
+        <script src="js/function_accueil.js"></script>
 
         <script>
             function toggleUserMenu() {
                 document.getElementById('userMenu').classList.toggle('hidden');
             }
 
-            function toggleSecurityMenu() {
-                document.getElementById('securityMenu').classList.toggle('hidden');
-            }
-
-            // Fermer les menus si on clique ailleurs
+            // Fermer le menu si on clique ailleurs
             document.addEventListener('click', function(event) {
                 const userMenu = document.getElementById('userMenu');
-                const securityMenu = document.getElementById('securityMenu');
-                const userButton = event.target.closest('button[onclick="toggleUserMenu()"]');
-                const securityButton = event.target.closest('button[onclick="toggleSecurityMenu()"]');
+                const userButton = event.target.closest('button');
 
-                if (!userButton) {
+                if (!userButton || !userButton.onclick) {
                     userMenu.classList.add('hidden');
-                }
-                if (!securityButton) {
-                    securityMenu.classList.add('hidden');
                 }
             });
 
-            // Toggle pour les menus des cartes
-            function toggleMenu(menuId) {
-                const menu = document.getElementById(menuId);
-                menu.classList.toggle('hidden');
-            }
-
-            // Fonction pour reporter une fiche
-            function reporterFiche(numFiche) {
-                const newDate = prompt('Nouvelle date de décaissement (YYYY-MM-DD):');
-                if (newDate) {
-                    window.location.href = 'src/reporter_fiche.php?num_fiche=' + numFiche + '&new_date=' + newDate;
-                }
-            }
-
-            // Initialisation au chargement de la page
+            // Script pour améliorer l'interface de recherche inversée
             $(document).ready(function() {
-                // Mettre à jour l'affichage du mode de recherche au chargement
+                // Fonction pour mettre à jour le label et les couleurs
+                function updateSearchModeDisplay() {
+                    var isInverse = $("#recherche_inverse").is(":checked");
+                    var label = $("#recherche_label");
+                    var indicator = $("#recherche_indicator");
+                    var container = $(".recherche-inverse-container");
+
+                    if (isInverse) {
+                        label.text("Inversée").removeClass("text-green-600").addClass("text-red-600");
+                        indicator.text("Exclut les résultats").removeClass("text-green-600").addClass("text-red-600");
+                        container.removeClass("bg-green-50 border-green-200").addClass("bg-red-50 border-red-200");
+                    } else {
+                        label.text("Normale").removeClass("text-red-600").addClass("text-green-600");
+                        indicator.text("Inclut les résultats").removeClass("text-red-600").addClass("text-green-600");
+                        container.removeClass("bg-red-50 border-red-200").addClass("bg-green-50 border-green-200");
+                    }
+                }
+
+                // Écouter les changements de la checkbox
+                $("#recherche_inverse").change(function() {
+                    updateSearchModeDisplay();
+                });
+
+                // Mettre à jour l'affichage au chargement
                 updateSearchModeDisplay();
+
+                // Charger les résultats par défaut
+                chargerResultats();
             });
         </script>
     </body>

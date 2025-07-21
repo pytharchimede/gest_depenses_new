@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../../connex.php');
+include('../connex.php');
 
 ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 12000);
@@ -92,8 +92,7 @@ if ($has_filters) {
     $count_stmt = $con->query("SELECT COUNT(*) as total FROM fiche WHERE id_fiche!='' AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE()");
     $count_1 = $count_stmt->fetch()['total'];
 
-    $stmt = $con->query("SELECT * FROM fiche WHERE id_fiche!='' AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE() ORDER BY id_fiche DESC LIMIT $start, $records_per_page");
-    $records = $stmt->fetchAll();
+    $records = $con->query("SELECT * FROM fiche WHERE id_fiche!='' AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE() ORDER BY id_fiche DESC LIMIT $start, $records_per_page");
 }
 
 $count = count($records);
