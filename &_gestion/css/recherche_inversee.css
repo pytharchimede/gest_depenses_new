@@ -1,0 +1,75 @@
+/* Styles pour le formulaire de recherche inversée */
+.recherche-inverse-container {
+    transition: all 0.3s ease;
+}
+
+.recherche-inverse-normal {
+    background-color: #f8f9fa !important;
+    border: 1px solid #198754 !important;
+    border-radius: 4px !important;
+    padding: 5px !important;
+}
+
+.recherche-inverse-active {
+    background-color: #fff5f5 !important;
+    border: 1px solid #dc3545 !important;
+    border-radius: 4px !important;
+    padding: 5px !important;
+}
+
+.recherche-label-normal {
+    color: #198754 !important;
+    font-weight: bold !important;
+}
+
+.recherche-label-inverse {
+    color: #dc3545 !important;
+    font-weight: bold !important;
+}
+
+/* Animation pour le changement d'état */
+.recherche-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    max-width: 350px;
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Amélioration de l'apparence du champ de recherche */
+#recher_demandeur {
+    position: relative;
+}
+
+#recher_demandeur:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Indicateur visuel pour le mode de recherche actif */
+.recherche-mode-indicator {
+    font-size: 0.8em;
+    margin-top: 2px;
+    font-style: italic;
+}
+
+.recherche-mode-normal::before {
+    content: "✓ ";
+    color: #198754;
+}
+
+.recherche-mode-inverse::before {
+    content: "✗ ";
+    color: #dc3545;
+}

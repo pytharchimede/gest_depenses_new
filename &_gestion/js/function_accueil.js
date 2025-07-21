@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    
-    
-     // Fonction pour charger les résultats
+  // Fonction pour charger les résultats
   function chargerResultats() {
     var recher_etat = $("#recher_etat").val() || "";
     var recher_date_debut = $("#recher_date_debut").val() || "";
@@ -9,6 +7,7 @@ $(document).ready(function () {
     var recher_demandeur = $("#recher_demandeur").val() || "";
     var recher_chantier = $("#recher_chantier").val() || "";
     var recher_affectation = $("#recher_affectation").val() || "";
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
     var page_id = "0";
 
     var dataString =
@@ -25,7 +24,9 @@ $(document).ready(function () {
       "&recher_chantier=" +
       recher_chantier +
       "&recher_affectation=" +
-      recher_affectation;
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
     $.ajax({
       type: "POST",
@@ -34,7 +35,9 @@ $(document).ready(function () {
       cache: false,
       beforeSend: function () {
         $("div.chargement")
-          .html('<img src="../../img/giphy.gif" style="width:55px; height:55px;" />')
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
           .show();
         $(".affiche_accueil").hide();
       },
@@ -49,79 +52,17 @@ $(document).ready(function () {
   chargerResultats();
 
   // Recharger les résultats lors de changements dans les champs de recherche
-  $("#recher_affectation, #recher_etat, #recher_date_debut, #recher_date_fin, #recher_demandeur, #recher_chantier").on("change keyup", function () {
+  $(
+    "#recher_affectation, #recher_etat, #recher_date_debut, #recher_date_fin, #recher_demandeur, #recher_chantier, #recherche_inverse"
+  ).on("change keyup", function () {
     chargerResultats();
   });
 
-         
-         console.log(  $("#recher_affectation"));
-         
-             $("#recher_affectation").on("change", function () {
-        
-      console.log('Affectation changée ! ');
-        
-      var recher_etat = $("#recher_etat").val();
+  console.log($("#recher_affectation"));
 
-      var recher_date_debut = $("#recher_date_debut").val();
+  $("#recher_affectation").on("change", function () {
+    console.log("Affectation changée ! ");
 
-      var recher_date_fin = $("#recher_date_fin").val();
-
-      var recher_demandeur = $("#recher_demandeur").val();
-
-      var recher_chantier = $("#recher_chantier").val();
-
-      var recher_affectation = $("#recher_affectation").val();
-
-      var page_id = "0";
-
-      var dataString =
-        "page_id=" +
-        page_id +
-        "&recher_etat=" +
-        recher_etat +
-        "&recher_date_debut=" +
-        recher_date_debut +
-        "&recher_date_fin=" +
-        recher_date_fin +
-        "&recher_demandeur=" +
-        recher_demandeur +
-        "&recher_chantier=" +
-        recher_chantier +
-        "&recher_affectation=" +
-        recher_affectation;
-
-      $.ajax({
-        type: "POST",
-
-        url: "src/charge_accueil.php",
-
-        data: dataString,
-
-        cache: false,
-
-        beforeSend: function () {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .show();
-
-          $(".affiche_accueil").hide();
-        },
-
-        success: function (result) {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .hide();
-
-          $(".affiche_accueil").html(result).show();
-        },
-      });
-    });
-    
-    $("#recher_etat").on("change", function () {
     var recher_etat = $("#recher_etat").val();
 
     var recher_date_debut = $("#recher_date_debut").val();
@@ -133,6 +74,8 @@ $(document).ready(function () {
     var recher_chantier = $("#recher_chantier").val();
 
     var recher_affectation = $("#recher_affectation").val();
+
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
 
     var page_id = "0";
 
@@ -150,7 +93,75 @@ $(document).ready(function () {
       "&recher_chantier=" +
       recher_chantier +
       "&recher_affectation=" +
-      recher_affectation;
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
+
+    $.ajax({
+      type: "POST",
+
+      url: "src/charge_accueil.php",
+
+      data: dataString,
+
+      cache: false,
+
+      beforeSend: function () {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .show();
+
+        $(".affiche_accueil").hide();
+      },
+
+      success: function (result) {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .hide();
+
+        $(".affiche_accueil").html(result).show();
+      },
+    });
+  });
+
+  $("#recher_etat").on("change", function () {
+    var recher_etat = $("#recher_etat").val();
+
+    var recher_date_debut = $("#recher_date_debut").val();
+
+    var recher_date_fin = $("#recher_date_fin").val();
+
+    var recher_demandeur = $("#recher_demandeur").val();
+
+    var recher_chantier = $("#recher_chantier").val();
+
+    var recher_affectation = $("#recher_affectation").val();
+
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
+
+    var page_id = "0";
+
+    var dataString =
+      "page_id=" +
+      page_id +
+      "&recher_etat=" +
+      recher_etat +
+      "&recher_date_debut=" +
+      recher_date_debut +
+      "&recher_date_fin=" +
+      recher_date_fin +
+      "&recher_demandeur=" +
+      recher_demandeur +
+      "&recher_chantier=" +
+      recher_chantier +
+      "&recher_affectation=" +
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
     $.ajax({
       type: "POST",
@@ -196,6 +207,8 @@ $(document).ready(function () {
 
     var recher_affectation = $("#recher_affectation").val();
 
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
+
     var page_id = "0";
 
     var dataString =
@@ -212,7 +225,9 @@ $(document).ready(function () {
       "&recher_chantier=" +
       recher_chantier +
       "&recher_affectation=" +
-      recher_affectation;
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
     $.ajax({
       type: "POST",
@@ -258,6 +273,8 @@ $(document).ready(function () {
 
     var recher_affectation = $("#recher_affectation").val();
 
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
+
     var page_id = "0";
 
     var dataString =
@@ -274,7 +291,9 @@ $(document).ready(function () {
       "&recher_chantier=" +
       recher_chantier +
       "&recher_affectation=" +
-      recher_affectation;
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
     $.ajax({
       type: "POST",
@@ -305,146 +324,141 @@ $(document).ready(function () {
         $(".affiche_accueil").html(result).show();
       },
     });
+  });
 
-    document
-      .querySelectorAll('input[type="date"]')
-      .forEach(function (dateInput) {
-        dateInput.addEventListener("change", function () {
-          const today = new Date().toISOString().split("T")[0]; // Format AAAA-MM-JJ
-          if (this.value <= today) {
-            alert(
-              "La date sélectionnée ne peut pas précéder ou être égale à la date du jour."
-            );
-            this.value = ""; // Réinitialise le champ si la date est incorrecte
-          }
-        });
-      });
+  $("#recher_demandeur").on("keyup", function () {
+    var recher_etat = $("#recher_etat").val();
 
-    $("#recher_demandeur").on("keyup", function () {
-      var recher_etat = $("#recher_etat").val();
+    var recher_date_debut = $("#recher_date_debut").val();
 
-      var recher_date_debut = $("#recher_date_debut").val();
+    var recher_date_fin = $("#recher_date_fin").val();
 
-      var recher_date_fin = $("#recher_date_fin").val();
+    var recher_demandeur = $("#recher_demandeur").val();
 
-      var recher_demandeur = $("#recher_demandeur").val();
+    var recher_chantier = $("#recher_chantier").val();
 
-      var recher_chantier = $("#recher_chantier").val();
+    var recher_affectation = $("#recher_affectation").val();
 
-      var recher_affectation = $("#recher_affectation").val();
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
 
-      var page_id = "0";
+    var page_id = "0";
 
-      var dataString =
-        "page_id=" +
-        page_id +
-        "&recher_etat=" +
-        recher_etat +
-        "&recher_date_debut=" +
-        recher_date_debut +
-        "&recher_date_fin=" +
-        recher_date_fin +
-        "&recher_demandeur=" +
-        recher_demandeur +
-        "&recher_chantier=" +
-        recher_chantier +
-        "&recher_affectation=" +
-        recher_affectation;
+    var dataString =
+      "page_id=" +
+      page_id +
+      "&recher_etat=" +
+      recher_etat +
+      "&recher_date_debut=" +
+      recher_date_debut +
+      "&recher_date_fin=" +
+      recher_date_fin +
+      "&recher_demandeur=" +
+      recher_demandeur +
+      "&recher_chantier=" +
+      recher_chantier +
+      "&recher_affectation=" +
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
-      $.ajax({
-        type: "POST",
+    $.ajax({
+      type: "POST",
 
-        url: "src/charge_accueil.php",
+      url: "src/charge_accueil.php",
 
-        data: dataString,
+      data: dataString,
 
-        cache: false,
+      cache: false,
 
-        beforeSend: function () {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .show();
+      beforeSend: function () {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .show();
 
-          $(".affiche_accueil").hide();
-        },
+        $(".affiche_accueil").hide();
+      },
 
-        success: function (result) {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .hide();
+      success: function (result) {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .hide();
 
-          $(".affiche_accueil").html(result).show();
-        },
-      });
+        $(".affiche_accueil").html(result).show();
+      },
     });
+  });
 
-    $("#recher_chantier").on("change", function () {
-      var recher_etat = $("#recher_etat").val();
+  $("#recher_chantier").on("change", function () {
+    var recher_etat = $("#recher_etat").val();
 
-      var recher_date_debut = $("#recher_date_debut").val();
+    var recher_date_debut = $("#recher_date_debut").val();
 
-      var recher_date_fin = $("#recher_date_fin").val();
+    var recher_date_fin = $("#recher_date_fin").val();
 
-      var recher_demandeur = $("#recher_demandeur").val();
+    var recher_demandeur = $("#recher_demandeur").val();
 
-      var recher_chantier = $("#recher_chantier").val();
+    var recher_chantier = $("#recher_chantier").val();
 
-      var recher_affectation = $("#recher_affectation").val();
+    var recher_affectation = $("#recher_affectation").val();
 
-      var page_id = "0";
+    var recherche_inverse = $("#recherche_inverse").is(":checked") ? "1" : "0";
 
-      var dataString =
-        "page_id=" +
-        page_id +
-        "&recher_etat=" +
-        recher_etat +
-        "&recher_date_debut=" +
-        recher_date_debut +
-        "&recher_date_fin=" +
-        recher_date_fin +
-        "&recher_demandeur=" +
-        recher_demandeur +
-        "&recher_chantier=" +
-        recher_chantier +
-        "&recher_affectation=" +
-        recher_affectation;
+    var page_id = "0";
 
-      $.ajax({
-        type: "POST",
+    var dataString =
+      "page_id=" +
+      page_id +
+      "&recher_etat=" +
+      recher_etat +
+      "&recher_date_debut=" +
+      recher_date_debut +
+      "&recher_date_fin=" +
+      recher_date_fin +
+      "&recher_demandeur=" +
+      recher_demandeur +
+      "&recher_chantier=" +
+      recher_chantier +
+      "&recher_affectation=" +
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
-        url: "src/charge_accueil.php",
+    $.ajax({
+      type: "POST",
 
-        data: dataString,
+      url: "src/charge_accueil.php",
 
-        cache: false,
+      data: dataString,
 
-        beforeSend: function () {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .show();
+      cache: false,
 
-          $(".affiche_accueil").hide();
-        },
+      beforeSend: function () {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .show();
 
-        success: function (result) {
-          $("div.chargement")
-            .html(
-              '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
-            )
-            .hide();
+        $(".affiche_accueil").hide();
+      },
 
-          $(".affiche_accueil").html(result).show();
-        },
-      });
+      success: function (result) {
+        $("div.chargement")
+          .html(
+            '<img src="../../img/giphy.gif" style="width:55px; height:55px;" />'
+          )
+          .hide();
+
+        $(".affiche_accueil").html(result).show();
+      },
     });
+  });
 
-
+  // Initialisation du chargement
   $("div.chargement")
     .html('<img src="../img/giphy.gif" style="width:55px; height:55px;" />')
     .show();
@@ -463,9 +477,7 @@ $(document).ready(function () {
 
   $("div.msg_erreur").hide();
 
-
-  });
-
+  // Fonction pour changer de page
   function change_page_accueil(page_id) {
     var recher_etat = "";
 
@@ -478,6 +490,8 @@ $(document).ready(function () {
     var recher_chantier = "";
 
     var recher_affectation = "";
+
+    var recherche_inverse = "";
 
     var dataString =
       "page_id=" +
@@ -493,7 +507,9 @@ $(document).ready(function () {
       "&recher_chantier=" +
       recher_chantier +
       "&recher_affectation=" +
-      recher_affectation;
+      recher_affectation +
+      "&recherche_inverse=" +
+      recherche_inverse;
 
     $.ajax({
       type: "POST",

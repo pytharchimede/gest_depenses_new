@@ -45,7 +45,7 @@
 	
 	
   
-  if($recher_date_debut!='' || $recher_date_fin!='' || $recher_demandeur!='' || $recher_affectation!=''){
+  if($recher_date_debut!='' || $recher_date_fin!='' || $recher_demandeur!='' || $recher_affectation=''){
   ?>
   <script>
    function change_page_approbation(page_id){
@@ -146,26 +146,31 @@
 
      }
 
+
+/*
+     if($_SESSION['resp_technique']==1 || $_SESSION['verif_conforme']==1){
+
+        $requete.=" AND affectation_id=1 AND conforme=1  ";
+
+     }
+     */
      
-// Si c'est baby (woURW8hYVj), elle voit toutes les fiches affectation_id = 1 sans filtre
-if ($_SESSION['secur_hop'] == "woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") {
-    $requete .= " AND affectation_id = 1 ";
-} else {
     if ($_SESSION['resp_technique'] == 1 || $_SESSION['verif_conforme'] == 1) {
-        if ($_SESSION['resp_ch48'] == 1 || $_SESSION['secur_hop']=="akpbnm") {
+        if ($_SESSION['resp_ch48'] == 1 || $_SESSION['secur_hop']=="woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") {
             $requete.= " AND affectation_id=1 AND conforme=1 AND chantier_id=51 ";
         } else {
             $requete.= " AND affectation_id=1 AND conforme=1 AND chantier_id!=51 ";
         }
-
-        if ($_SESSION['resp_ch41'] == 1 || $_SESSION['secur_hop']=="akpbnm") {
+    }
+    
+  
+    if ($_SESSION['resp_technique'] == 1 || $_SESSION['verif_conforme'] == 1) {
+        if ($_SESSION['resp_ch41'] == 1 || $_SESSION['secur_hop']=="woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") {
             $requete.= " AND affectation_id=1 AND conforme=1 AND chantier_id=41 ";
         } else {
             $requete.= " AND affectation_id=1 AND conforme=1 AND chantier_id!=41 ";
         }
-    }
-}
- 
+    }     
 
      
 
@@ -174,8 +179,6 @@ if ($_SESSION['secur_hop'] == "woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") 
         $requete.=" AND ((affectation_id=18 AND serv_bureau_fidest_id=7) OR (affectation_id=19 AND serv_bureau_banamur_id=7) OR (affectation_id=33)) ";
 
      }
-     
-
      
 	 
 	 $sqlQuery= $con->query($requete);
@@ -199,60 +202,90 @@ if ($_SESSION['secur_hop'] == "woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") 
   $second_last = $last_page - 1; 
 
   
-$pagination = "";
-if ($last_page > 1) {
-    $pagination .= "<div class='gridjs-pages'>";
 
-    // Fonction d'affichage d'un bouton
-    $btn = function ($label, $target, $enabled = true, $class = '') {
-        return $enabled
-            ? "<button tabindex='0' role='button' onClick='change_page_approbation($target);' class='$class'>$label</button>"
-            : "<button tabindex='0' role='button' class='' disabled=''>$label</button>";
-    };
-
-    // Boutons Début et Précédent
-    $pagination .= $btn("&laquo; Début", 1, $page > 1);
-    $pagination .= $btn("&laquo; Précédent", $prev, $page > 1);
-
-    // Affichage des pages
-    if ($last_page < 7 + ($adjacents * 2)) {
-        for ($i = 1; $i <= $last_page; $i++) {
-            $pagination .= $btn($i, $i, true, $i == $page ? "gridjs-currentPage" : '');
-        }
-    } elseif ($last_page > 5 + ($adjacents * 2)) {
-        if ($page < 1 + ($adjacents * 2)) {
-            for ($i = 1; $i < 4 + ($adjacents * 2); $i++) {
-                $pagination .= $btn($i, $i, true, $i == $page ? "gridjs-currentPage" : '');
-            }
-            $pagination .= "...";
-            $pagination .= $btn($second_last, $second_last);
-            $pagination .= $btn($last_page, $last_page);
-        } elseif ($page < $last_page - ($adjacents * 2)) {
-            $pagination .= $btn(1, 1);
-            $pagination .= $btn(2, 2);
-            $pagination .= "...";
-            for ($i = $page - $adjacents; $i <= $page + $adjacents; $i++) {
-                $pagination .= $btn($i, $i, true, $i == $page ? "gridjs-currentPage" : '');
-            }
-            $pagination .= "...";
-            $pagination .= $btn($second_last, $second_last);
-            $pagination .= $btn($last_page, $last_page);
-        } else {
-            $pagination .= $btn(1, 1);
-            $pagination .= $btn(2, 2);
-            $pagination .= "...";
-            for ($i = $last_page - (2 + $adjacents * 2); $i <= $last_page; $i++) {
-                $pagination .= $btn($i, $i, true, $i == $page ? "gridjs-currentPage" : '');
+  
+  $pagination = "";
+  if($last_page > 1){
+        $pagination .= "<div class='gridjs-pages'>";
+        if($page > 1)
+            $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(1);'>&laquo; Debut</button>";
+        else
+            $pagination.= "<button tabindex='0' role='button' tabindex='0' role='button' title='Previous' aria-label='Previous' class='' disabled=''>&laquo; Debut</button>";
+    
+    if ($page > 1)
+            $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($prev).");'>&laquo; Precedent&nbsp;&nbsp;</button>";
+        else
+            $pagination.= "<button tabindex='0' role='button' tabindex='0' role='button' title='Previous' aria-label='Previous' class='' disabled=''>&laquo; Precedent&nbsp;&nbsp;</button>";   
+    
+        if ($last_page < 7 + ($adjacents * 2))
+        {   
+            for ($counter = 1; $counter <= $last_page; $counter++)
+            {
+                if ($counter == $page)
+                    $pagination.= "<button tabindex='0' role='button' role='button' class='gridjs-currentPage'>$counter</button>";
+                else
+                    $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($counter).");'>$counter</button>";     
+                         
             }
         }
+        elseif($last_page > 5 + ($adjacents * 2))
+        {
+            if($page < 1 + ($adjacents * 2))
+            {
+                for($counter = 1; $counter < 4 + ($adjacents * 2); $counter++)
+                {
+                    if($counter == $page)
+                        $pagination.= "<button tabindex='0' role='button' role='button' class='gridjs-currentPage'>$counter</button>";
+                    else
+                        $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($counter).");'>$counter</button>";     
+                }
+                $pagination.= "...";
+                $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($second_last).");'> $second_last</button>";
+                $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($last_page).");'>$last_page</button>";   
+           
+           }
+           elseif($last_page - ($adjacents * 2) > $page && $page > ($adjacents * 2))
+           {
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(1);'>1</button>";
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(2);'>2</button>";
+               $pagination.= "...";
+               for($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++)
+               {
+                   if($counter == $page)
+                       $pagination.= "<button tabindex='0' role='button' role='button' class='gridjs-currentPage'>$counter</button>";
+                   else
+                       $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($counter).");'>$counter</button>";     
+               }
+               $pagination.= "..";
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($second_last).");'>$second_last</button>";
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($last_page).");'>$last_page</button>";   
+           }
+           else
+           {
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(1);'>1</button>";
+               $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(2);'>2</button>";
+               $pagination.= "..";
+               for($counter = $last_page - (2 + ($adjacents * 2)); $counter <= $last_page; $counter++)
+               {
+                   if($counter == $page)
+                        $pagination.= "<button tabindex='0' role='button' role='button' class='gridjs-currentPage'>$counter</button>";
+                   else
+                        $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($counter).");'>$counter</button>";     
+               }
+           }
+        }
+        if($page < $counter - 1)
+            $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($next).");'>Suivant &raquo;</button>";
+        else
+            $pagination.= "<button tabindex='0' role='button' tabindex='0' role='button' title='Previous' aria-label='Previous' class='' disabled=''>Suivant &raquo;</span>";
+    
+    if($page < $last_page)
+            $pagination.= "<button tabindex='0' role='button' href='javascript:void(0);' onClick='change_page_approbation(".($last_page).");'>Fin &raquo;</button>";
+        else
+            $pagination.= "<button tabindex='0' role='button' tabindex='0' role='button' title='Previous' aria-label='Previous' class='' disabled=''>Fin &raquo;</button>";
+        
+        $pagination.= "</div>";       
     }
-
-    // Boutons Suivant et Fin
-    $pagination .= $btn("Suivant &raquo;", $next, $page < $last_page);
-    $pagination .= $btn("Fin &raquo;", $last_page, $page < $last_page);
-
-    $pagination .= "</div>";
-}
 
 
 
@@ -261,82 +294,98 @@ if ($last_page > 1) {
     $_SESSION["recher_demandeur"]=$recher_demandeur;
     $_SESSION['recher_affectation']=$recher_affectation;
  
-$req = "SELECT * FROM fiche 
-        WHERE id_fiche != '' 
-        AND approuve = 0 
-        AND etat_fiche = 0 
-        AND sauvegarder = 0";
+	 $req="SELECT * FROM fiche WHERE id_fiche!='' AND approuve=0 AND etat_fiche=0 AND sauvegarder=0 ";
 
-// Filtrage par rôle
-if ($_SESSION['secur_hop'] != 'dgfidest' && $_SESSION['secur_hop'] != 'lol') {
-    $req .= " AND affectation_id NOT IN (29, 30)";
-}
+	 
 
-// Filtrage par date
-if (!empty($recher_date_debut)) {
-    $req .= " AND date_creat_fiche >= '" . addslashes($recher_date_debut) . "'";
-}
+	 if($_SESSION['secur_hop']!='dgfidest' && $_SESSION['secur_hop']!='lol')
 
-if (!empty($recher_date_fin)) {
-    $req .= " AND date_creat_fiche <= '" . addslashes($recher_date_fin) . "'";
-}
+	 {
 
-// Filtrage par demandeur
-if (!empty($recher_demandeur)) {
-    $req .= " AND beficiaire_fiche LIKE '%" . addslashes($recher_demandeur) . "%'";
-}
+	     $req.=' AND affectation_id!=29 AND affectation_id!=30 ';
 
-// Filtrage par affectation
-if (!empty($recher_affectation)) {
-    $req .= " AND affectation_id = " . intval($recher_affectation);
-}
+	 }
 
-// Rôles spécifiques
-if (!empty($_SESSION['resp_logistique'])) {
-    $req .= " AND (
-                (affectation_id = 18 AND serv_bureau_fidest_id = 8) OR 
-                (affectation_id = 19 AND serv_bureau_banamur_id = 8)
-             )";
-}
+	 	 
 
-if (!empty($_SESSION['resp_bureau'])) {
-    $req .= " AND affectation_id IN (18, 19)";
-}
+	 if($recher_date_debut!=""){
 
-// Si c'est baby (woURW8hYVj), elle voit toutes les fiches affectation_id = 1 sans filtre
-if ($_SESSION['secur_hop'] == "woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") {
-    $req .= " AND affectation_id = 1 ";
-} else {
+	 $req.=" AND date_creat_fiche>='".$recher_date_debut."'  ";
+
+	 }
+
+	 
+
+	 if($recher_date_fin!=""){
+
+	 $req.=" AND date_creat_fiche<='".$recher_date_fin."' ";
+
+	 }
+
+
+
+     if($recher_demandeur!=""){
+
+        $req.=" AND beficiaire_fiche LIKE '%".$recher_demandeur."%' ";
+
+     }
+
+
+
+
+
+     if($recher_affectation!=""){
+
+        $req.=" AND affectation_id=".$recher_affectation." ";
+
+     }
+
+     
+
+
+
+     if($_SESSION['resp_logistique']==1){
+
+        $req.=" AND ((affectation_id=18 AND serv_bureau_fidest_id=8) OR (affectation_id=19 AND serv_bureau_banamur_id=8)) ";
+
+     }
+
+	 
+
+     if($_SESSION['resp_bureau']==1){
+
+        $req.=" AND (affectation_id=18 OR affectation_id=19)  ";
+
+     }
+
+
+/*
+     if($_SESSION['resp_technique']==1 || $_SESSION['verif_conforme']==1){
+
+        $req.=" AND affectation_id=1 AND conforme=1  ";
+
+     }
+     */
+     
     if ($_SESSION['resp_technique'] == 1 || $_SESSION['verif_conforme'] == 1) {
-        if ($_SESSION['resp_ch48'] == 1 || $_SESSION['secur_hop']=="akpbnm") {
-            $req.= " AND affectation_id=1 AND conforme=1 AND chantier_id=51 ";
+        if ($_SESSION['resp_ch48'] == 1 || $_SESSION['secur_hop']=="woURW8hYVj" || $_SESSION['secur_hop']=="akpbnm") {
+            $req .= " AND affectation_id=1 AND conforme=1 AND chantier_id=51 ";
         } else {
-            $requete.= " AND affectation_id=1 AND conforme=1 AND chantier_id!=51 ";
-        }
-
-        if ($_SESSION['resp_ch41'] == 1 || $_SESSION['secur_hop']=="akpbnm") {
-            $req.= " AND affectation_id=1 AND conforme=1 AND chantier_id=41 ";
-        } else {
-            $req.= " AND affectation_id=1 AND conforme=1 AND chantier_id!=41 ";
+            $req .= " AND affectation_id=1 AND conforme=1 AND chantier_id!=51 ";
         }
     }
-}
+    
+	 
 
+     
 
-if (!empty($_SESSION['resp_rh'])) {
-    $req .= " AND (
-                (affectation_id = 18 AND serv_bureau_fidest_id = 7) OR 
-                (affectation_id = 19 AND serv_bureau_banamur_id = 7) OR 
-                (affectation_id = 33)
-             )";
-}
+     if($_SESSION['resp_rh']==1){
 
-// Tri et pagination
-$req .= " ORDER BY id_fiche DESC LIMIT $start, $records_per_page";
+        $req.=" AND ((affectation_id=18 AND serv_bureau_fidest_id=7) OR (affectation_id=19 AND serv_bureau_banamur_id=7) OR (affectation_id=33)) ";
 
-// Exécution
-$records = $con->query($req);
-
+     }
+	 $req.=" ORDER BY id_fiche DESC LIMIT $start, $records_per_page ";
+	 $records= $con->query($req);
 	 
    
 	 

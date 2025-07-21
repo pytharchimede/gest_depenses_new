@@ -36,6 +36,12 @@ if (isset($_POST['recher_affectation']) && $_POST['recher_affectation'] != '') {
     $recher_affectation = '';
 }
 
+if (isset($_POST['recherche_inverse']) && $_POST['recherche_inverse'] != '') {
+    $recherche_inverse = $_POST['recherche_inverse'];
+} else {
+    $recherche_inverse = '';
+}
+
 if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '' || $recher_chantier != '' || $recher_affectation != '') {
 ?>
     <script>
@@ -46,8 +52,9 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
             var recher_demandeur = '<?php echo $recher_demandeur; ?>';
             var recher_chantier = '<?php echo $recher_chantier; ?>';
             var recher_affectation = '<?php echo $recher_affectation; ?>';
+            var recherche_inverse = '<?php echo $recherche_inverse; ?>';
 
-            var dataString = 'page_id=' + page_id + '&recher_date_debut=' + recher_date_debut + '&recher_date_fin=' + recher_date_fin + '&recher_demandeur=' + recher_demandeur + '&recher_chantier=' + recher_chantier + '&recher_affectation=' + recher_affectation;
+            var dataString = 'page_id=' + page_id + '&recher_date_debut=' + recher_date_debut + '&recher_date_fin=' + recher_date_fin + '&recher_demandeur=' + recher_demandeur + '&recher_chantier=' + recher_chantier + '&recher_affectation=' + recher_affectation + '&recherche_inverse=' + recherche_inverse;
 
             $.ajax({
                 type: "POST",
@@ -74,6 +81,7 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
     $_SESSION["recher_demandeur"] = $recher_demandeur;
     $_SESSION["recher_chantier"] = $recher_chantier;
     $_SESSION["recher_affectation"] = $recher_affectation;
+    $_SESSION["recherche_inverse"] = $recherche_inverse;
 
     $requete = "SELECT * FROM fiche WHERE id_fiche!=''AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE() ";
 
@@ -90,7 +98,11 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
     }
 
     if ($recher_demandeur != "") {
-        $requete .= " AND beficiaire_fiche LIKE '%" . $recher_demandeur . "%' ";
+        if ($recherche_inverse == "1") {
+            $requete .= " AND beficiaire_fiche NOT LIKE '%" . $recher_demandeur . "%' ";
+        } else {
+            $requete .= " AND beficiaire_fiche LIKE '%" . $recher_demandeur . "%' ";
+        }
     }
 
     if ($recher_chantier != "") {
@@ -203,6 +215,7 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
     $_SESSION["recher_demandeur"] = $recher_demandeur;
     $_SESSION["recher_chantier"] = $recher_chantier;
     $_SESSION["recher_affectation"] = $recher_affectation;
+    $_SESSION["recherche_inverse"] = $recherche_inverse;
 
     $requete = "SELECT * FROM fiche WHERE id_fiche!='' AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE() ";
 
@@ -219,7 +232,11 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
     }
 
     if ($recher_demandeur != "") {
-        $requete .= " AND beficiaire_fiche LIKE '%" . $recher_demandeur . "%' ";
+        if ($recherche_inverse == "1") {
+            $requete .= " AND beficiaire_fiche NOT LIKE '%" . $recher_demandeur . "%' ";
+        } else {
+            $requete .= " AND beficiaire_fiche LIKE '%" . $recher_demandeur . "%' ";
+        }
     }
 
     if ($recher_chantier != "") {
@@ -237,6 +254,9 @@ if ($recher_date_debut != '' || $recher_date_fin != '' || $recher_demandeur != '
     $_SESSION["recher_date_debut"] = '';
     $_SESSION["recher_date_fin"] = '';
     $_SESSION["recher_demandeur"] = '';
+    $_SESSION["recher_chantier"] = '';
+    $_SESSION["recher_affectation"] = '';
+    $_SESSION["recherche_inverse"] = '';
 
     $records = $con->query("SELECT * FROM fiche WHERE id_fiche!='' AND etat_fiche=0 AND decaisse=0 AND sauvegarder=0 AND approuve=1 AND date_decaissement_minimum <= CURDATE() ORDER BY id_fiche DESC LIMIT $start, $records_per_page");
 }
@@ -246,7 +266,6 @@ $HTML = '';
 
 $HTML .= '<p class="col_titre">Nombre fiches trouvées : <b>' . $count_1 . '</b>&nbsp;&nbsp;';
 $HTML .= '
-
     <a href="exportation/pdf/pdf_liste.php" target="_blank" style="font-size:20px; font-weight:600; color: #da0909" title="Générer le fichier pdf">
         <i class="fa fa-file-pdf"></i>
     </a>  &nbsp;&nbsp;&nbsp;

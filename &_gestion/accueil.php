@@ -30,6 +30,7 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min_horizontal.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="css/recherche_inversee.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body data-layout="horizontal">
@@ -248,9 +249,22 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="col-lg-4 col-xs-12" style="margin-top:10px;">
+                                        <div class="col-lg-3 col-xs-12" style="margin-top:10px;">
                                             <label class="col-lg-4 control-label"><b>Nom et Prénom(s)</b></label>
                                             <input type="text" class="form-control" name="recher_demandeur" id="recher_demandeur" placeholder="Nom et Prénom(s) du demandeur">
+                                        </div>
+                                        <div class="col-lg-1 col-xs-12" style="margin-top:10px;">
+                                            <label class="col-lg-12 control-label"><b>Mode de recherche</b></label>
+                                            <div class="form-check recherche-inverse-container">
+                                                <input type="checkbox" class="form-check-input" name="recherche_inverse" id="recherche_inverse" title="Cocher pour exclure les résultats correspondants">
+                                                <label class="form-check-label" for="recherche_inverse">
+                                                    <span id="recherche_label">Normale</span>
+                                                    <i class="fas fa-question-circle" title="Recherche normale : inclut les résultats qui correspondent aux critères / Recherche inversée : exclut les résultats qui correspondent aux critères"></i>
+                                                </label>
+                                                <div class="recherche-mode-indicator" id="recherche_indicator">
+                                                    Inclut les résultats
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-2 col-xs-12" style="margin-top:10px;">
                                             <label class="col-lg-4 control-label"><b>Début</b></label>
@@ -357,6 +371,72 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                 <!-- Scripts spécifiques à votre application -->
                 <script src="assets/js/app_horizontal.js"></script>
                 <script src="js/function_accueil.js"></script>
+
+                <!-- Script pour améliorer l'interface de recherche inversée -->
+                <script>
+                    $(document).ready(function() {
+                        // Fonction pour mettre à jour le label et les couleurs
+                        function updateSearchModeDisplay() {
+                            var isInverse = $("#recherche_inverse").is(":checked");
+                            var label = $("#recherche_label");
+                            var indicator = $("#recherche_indicator");
+                            var container = $(".recherche-inverse-container");
+
+                            if (isInverse) {
+                                label.text("Inversée").removeClass("recherche-label-normal").addClass("recherche-label-inverse");
+                                indicator.text("Exclut les résultats").removeClass("recherche-mode-normal").addClass("recherche-mode-inverse");
+                                container.removeClass("recherche-inverse-normal").addClass("recherche-inverse-active");
+                            } else {
+                                label.text("Normale").removeClass("recherche-label-inverse").addClass("recherche-label-normal");
+                                indicator.text("Inclut les résultats").removeClass("recherche-mode-inverse").addClass("recherche-mode-normal");
+                                container.removeClass("recherche-inverse-active").addClass("recherche-inverse-normal");
+                            }
+                        }
+
+                        // Mettre à jour l'affichage au chargement
+                        updateSearchModeDisplay();
+
+                        // Mettre à jour l'affichage lors du changement
+                        $("#recherche_inverse").on("change", function() {
+                            updateSearchModeDisplay();
+
+                            // Afficher une notification pour expliquer le changement
+                            var isInverse = $(this).is(":checked");
+                            var message = isInverse ?
+                                "<strong>Mode recherche inversée activé !</strong><br>Les résultats correspondant aux critères seront <strong>EXCLUS</strong> de l'affichage." :
+                                "<strong>Mode recherche normale activé !</strong><br>Les résultats correspondant aux critères seront <strong>INCLUS</strong> dans l'affichage.";
+
+                            var alertType = isInverse ? "alert-warning" : "alert-success";
+                            var icon = isInverse ? "fa-exclamation-triangle" : "fa-check-circle";
+
+                            // Créer une notification temporaire
+                            var notification = $('<div class="alert ' + alertType + ' alert-dismissible fade show recherche-notification" role="alert">' +
+                                '<i class="fas ' + icon + '"></i> ' + message +
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                                '</div>');
+
+                            $('body').append(notification);
+
+                            // Supprimer automatiquement après 6 secondes
+                            setTimeout(function() {
+                                notification.fadeOut(500, function() {
+                                    $(this).remove();
+                                });
+                            }, 6000);
+                        });
+
+                        // Ajouter un indicateur visuel au champ de saisie
+                        $("#recher_demandeur").on("focus", function() {
+                            var isInverse = $("#recherche_inverse").is(":checked");
+                            var placeholder = isInverse ?
+                                "Tapez un nom pour l'EXCLURE des résultats" :
+                                "Tapez un nom pour l'INCLURE dans les résultats";
+                            $(this).attr("placeholder", placeholder);
+                        }).on("blur", function() {
+                            $(this).attr("placeholder", "Nom et Prénom(s) du demandeur");
+                        });
+                    });
+                </script>
 
     </body>
 

@@ -208,9 +208,6 @@
      }
 	 
 	 
-	 if($_SESSION['resp_ch48']==1){
-	     $requete.=" AND chantier_id=51 ";
-	 }
 	 
 	 $sqlQuery= $con->query($requete);
 	
@@ -386,9 +383,6 @@
         $requete.=" AND serv_rh_id='".$recher_serv_rh."' ";
      }
      
-     if($_SESSION['resp_ch48']==1){
-	     $requete.=" AND chantier_id=51 ";
-	 }
 
 	 $requete.=" ORDER BY id_fiche DESC LIMIT $start, $records_per_page";
 	 $records= $con->query($requete);
@@ -513,7 +507,7 @@ $HTML.='
  
 else
 {
-    $titre='<br />Aucune personne trouv&eacute;e';
+    $titre='<br />Aucune fiche trouv&eacute;e';
     $donnee=utf8_encode($titre);
     $HTML.='<div align="center"><font color="#990000" style="font-size:11px;">'.$donnee.'</font></div>';
 }
