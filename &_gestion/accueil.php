@@ -42,6 +42,48 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                 transition: all 0.3s ease;
                 border: 2px solid transparent;
             }
+
+            .recherche-inverse-container {
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            /* Styles pour le modal de report */
+            #reportModal {
+                animation: fadeIn 0.3s ease-out;
+            }
+
+            #reportModal>div {
+                animation: slideIn 0.3s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            /* Amélioration du champ date */
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                color: #4f46e5;
+                cursor: pointer;
+            }
         </style>
     </head>
 
@@ -331,13 +373,108 @@ if (isset($_SESSION['pass_hop']) && $_SESSION['pass_hop'] != '' && isset($_SESSI
                 menu.classList.toggle('hidden');
             }
 
-            // Fonction pour reporter une fiche
+            // Fonction pour reporter une fiche avec pop-up moderne
             function reporterFiche(numFiche) {
-                const newDate = prompt('Nouvelle date de décaissement (YYYY-MM-DD):');
-                if (newDate) {
-                    window.location.href = 'src/reporter_fiche.php?num_fiche=' + numFiche + '&new_date=' + newDate;
+                // Créer le pop-up moderne
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50';
+                modal.id = 'reportModal';
+
+                const today = new Date().toISOString().split('T')[0];
+
+                modal.innerHTML = `
+                    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                        <div class="mt-3">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-medium text-gray-900">Reporter la fiche ${numFiche}</h3>
+                                <button onclick="closeReportModal()" class="text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            
+                            <form id="reportForm" class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-calendar-alt mr-2 text-indigo-600"></i>
+                                        Nouvelle date de décaissement minimum
+                                    </label>
+                                    <input type="date" 
+                                           id="newReportDate" 
+                                           name="new_date"
+                                           min="${today}"
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                           required>
+                                </div>
+                                
+                                <div class="flex justify-end space-x-3 pt-4">
+                                    <button type="button" 
+                                            onclick="closeReportModal()"
+                                            class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors">
+                                        <i class="fas fa-times mr-2"></i>Annuler
+                                    </button>
+                                    <button type="submit"
+                                            class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+                                        <i class="fas fa-check mr-2"></i>Reporter
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+
+                // Gérer la soumission du formulaire
+                document.getElementById('reportForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const newDate = document.getElementById('newReportDate').value;
+                    if (!newDate) {
+                        alert('Veuillez sélectionner une date');
+                        return;
+                    }
+
+                    // Afficher un indicateur de chargement
+                    const submitBtn = e.target.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>En cours...';
+                    submitBtn.disabled = true;
+
+                    // Créer et envoyer le formulaire POST
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = 'src/reporter_fiche.php';
+
+                    const numFicheInput = document.createElement('input');
+                    numFicheInput.type = 'hidden';
+                    numFicheInput.name = 'num_fiche';
+                    numFicheInput.value = numFiche;
+
+                    const dateInput = document.createElement('input');
+                    dateInput.type = 'hidden';
+                    dateInput.name = 'new_date';
+                    dateInput.value = newDate;
+
+                    form.appendChild(numFicheInput);
+                    form.appendChild(dateInput);
+                    document.body.appendChild(form);
+                    form.submit();
+                });
+            }
+
+            function closeReportModal() {
+                const modal = document.getElementById('reportModal');
+                if (modal) {
+                    modal.remove();
                 }
             }
+
+            // Fermer le modal si on clique en dehors
+            document.addEventListener('click', function(event) {
+                if (event.target.id === 'reportModal') {
+                    closeReportModal();
+                }
+            });
 
             // Initialisation au chargement de la page
             $(document).ready(function() {
